@@ -2,18 +2,19 @@
 
 namespace BudgetGuru;
 
-class CalculateDiscounts extends Discount
+use BudgetGuru\Discounts\DiscountMoreFiveHundred;
+use BudgetGuru\Discounts\DiscountMoreFiveItems;
+use BudgetGuru\Discounts\DoesNotHaveDiscount;
+
+class CalculateDiscounts
 {
     public function calculate(Budget $budget): float
     {
+        $discountPipe = new DiscountMoreFiveItems(
+            new DiscountMoreFiveHundred(
+                new DoesNotHaveDiscount()
+            ));
 
-        $discountFiveItems = new DiscountMoreFiveItems();
-        $discount = $discountFiveItems->calculate($budget);
-        if ($discount === 0) {
-            $discountFiveHundred = new DiscountMoreFiveHundred();
-            $discount = $discountFiveHundred->calculate($budget);
-        }
-
-        return $discount;
+        return $discountPipe->calculate($budget);
     }
 }

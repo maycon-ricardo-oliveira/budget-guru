@@ -1,9 +1,18 @@
 <?php
 
-namespace BudgetGuru;
+namespace BudgetGuru\Discounts;
+
+use BudgetGuru\Budget;
+
 
 abstract class Discount
 {
+    protected ?Discount $nextDiscount;
 
-    abstract public function calculate(): float;
+    public function __construct(?Discount $nextDiscount)
+    {
+        $this->nextDiscount = $nextDiscount;
+    }
+
+    abstract public function calculate(Budget $budget): float;
 }
