@@ -6,9 +6,15 @@ use BudgetGuru\Taxes\Icms;
 
 require 'vendor/autoload.php';
 
-$calculate = new CalculateTaxes();
+//$calculate = new CalculateTaxes();
+//$budget = new Budget();
+//$budget->price = 100;
+//
+//echo $calculate->calculate($budget, new  Icms());
+
+$calculateDiscount = new \BudgetGuru\CalculateDiscounts();
 $budget = new Budget();
-$budget->price = 100;
+$budget->price = 200;
+$budget->items = 2;
 
-echo $calculate->calculate($budget, new  Icms());
-
+echo $calculateDiscount->calculate($budget);
