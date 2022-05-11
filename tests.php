@@ -14,7 +14,7 @@ require 'vendor/autoload.php';
 
 $calculateDiscount = new \BudgetGuru\CalculateDiscounts();
 $budget = new Budget();
-$budget->price = 200;
-$budget->items = 2;
+$budget->price = 600;
+$budget->items = 8;
 
 echo $calculateDiscount->calculate($budget);

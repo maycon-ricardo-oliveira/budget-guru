@@ -2,18 +2,18 @@
 
 namespace BudgetGuru;
 
-class CalculateDiscounts
+class CalculateDiscounts extends Discount
 {
     public function calculate(Budget $budget): float
     {
-        if ($budget->items > 5) {
-            return $budget->price * 0.1;
+
+        $discountFiveItems = new DiscountMoreFiveItems();
+        $discount = $discountFiveItems->calculate($budget);
+        if ($discount === 0) {
+            $discountFiveHundred = new DiscountMoreFiveHundred();
+            $discount = $discountFiveHundred->calculate($budget);
         }
 
-        if ($budget->price > 500) {
-            return $budget->price * 0.05;
-        }
-
-        return 0;
+        return $discount;
     }
 }
