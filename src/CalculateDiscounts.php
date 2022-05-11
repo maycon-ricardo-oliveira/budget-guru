@@ -6,6 +6,10 @@ class CalculateDiscounts
 {
     public function calculate(Budget $budget): float
     {
-        return $tax->calculateTax($budget);
+        if ($budget->items > 5) {
+            return $budget->price * 0.1;
+        }
+
+        return 0;
     }
 }
