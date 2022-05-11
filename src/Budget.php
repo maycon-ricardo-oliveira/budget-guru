@@ -6,5 +6,4 @@ class Budget
 {
     public float $price;
 
-
 }

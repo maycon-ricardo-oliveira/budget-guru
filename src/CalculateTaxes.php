@@ -2,17 +2,13 @@
 
 namespace BudgetGuru;
 
+use BudgetGuru\Taxes\Tax;
+
 class CalculateTaxes
 {
-    public function calculate(Budget $budget, string $nameTax): float
+    public function calculate(Budget $budget, Tax $tax): float
     {
-
-        switch ($nameTax) {
-            case 'ICMS':
-                return $budget->price * 0.1;
-            case 'ISS':
-                return $budget->price * 0.06;
-        }
+        return $tax->calculateTax($budget);
     }
 
 }

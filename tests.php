@@ -9,4 +9,4 @@ $calculate = new CalculateTaxes();
 $budget = new Budget();
 $budget->price = 100;
 
-echo $calculate->calculate($budget, 'ISS');
+echo $calculate->calculate($budget, new  \BudgetGuru\Taxes\Icms());
