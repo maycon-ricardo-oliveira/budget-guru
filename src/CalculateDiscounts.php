@@ -10,6 +10,10 @@ class CalculateDiscounts
             return $budget->price * 0.1;
         }
 
+        if ($budget->price > 500) {
+            return $budget->price * 0.05;
+        }
+
         return 0;
     }
 }
