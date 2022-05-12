@@ -2,6 +2,7 @@
 
 namespace BudgetGuru\Commands;
 
+use BudgetGuru\Actions\ActionAfterGenerateOrder;
 use BudgetGuru\Actions\CreateOrderInToDatabase;
 use BudgetGuru\Actions\LogGenerateOrder;
 use BudgetGuru\Actions\SendOrderToEmail;
@@ -14,7 +15,17 @@ use DateTimeImmutable;
 class GenerateOrderHandler
 {
 
+    /**
+     * @var ActionAfterGenerateOrder[]
+     */
+    private array $actionsAfterGenerateOrder = [];
+
     public function __construct(  ) {    }
+
+    public function addActionToGenerateOrder(ActionAfterGenerateOrder $action)
+    {
+        $this->actionsAfterGenerateOrder[] = $action;
+    }
 
     public function execute(GenerateOrder $generateOrder)
     {
@@ -27,13 +38,9 @@ class GenerateOrderHandler
         $order->clientName = $generateOrder->getClientName();
         $order->budget = $budget;
 
-        $orderRepository = new CreateOrderInToDatabase();
-        $logOrder = new LogGenerateOrder();
-        $sendMail = new SendOrderToEmail();
-
-        $orderRepository->action($order);
-        $logOrder->action($order);
-        $sendMail->action($order);
+        foreach ($this->actionsAfterGenerateOrder as $action) {
+            $action->action($order);
+        }
 
     }
 

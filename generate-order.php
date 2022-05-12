@@ -1,5 +1,8 @@
 <?php
 
+use BudgetGuru\Actions\CreateOrderInToDatabase;
+use BudgetGuru\Actions\LogGenerateOrder;
+use BudgetGuru\Actions\SendOrderToEmail;
 use BudgetGuru\GenerateOrder;
 use BudgetGuru\Commands\GenerateOrderHandler;
 
@@ -14,4 +17,7 @@ $clientName  = $argv[3];
 $generateOrder = new GenerateOrder($budgetPrice, $budgetItems, $clientName);
 $handler = new GenerateOrderHandler();
 
+$handler->addActionToGenerateOrder(new CreateOrderInToDatabase());
+$handler->addActionToGenerateOrder(new LogGenerateOrder());
+$handler->addActionToGenerateOrder(new SendOrderToEmail());
 $handler->execute($generateOrder);

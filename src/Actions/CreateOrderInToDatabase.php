@@ -5,7 +5,7 @@ namespace BudgetGuru\Actions;
 use BudgetGuru\Components\Log;
 use BudgetGuru\Order;
 
-class CreateOrderInToDatabase
+class CreateOrderInToDatabase implements ActionAfterGenerateOrder
 {
     public function action(Order $order): void
     {
