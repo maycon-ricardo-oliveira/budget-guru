@@ -9,7 +9,7 @@ class SendOrderToEmail implements ActionAfterGenerateOrder
 {
     public function action(Order $order): void
     {
-        Log::success("Sendding email for a order");
+        Log::success("Sending email for a order");
     }
 
 }
