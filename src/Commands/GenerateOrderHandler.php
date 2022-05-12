@@ -2,7 +2,11 @@
 
 namespace BudgetGuru\Commands;
 
+use BudgetGuru\Actions\CreateOrderInToDatabase;
+use BudgetGuru\Actions\LogGenerateOrder;
+use BudgetGuru\Actions\SendOrderToEmail;
 use BudgetGuru\Budget;
+use BudgetGuru\Components\Log;
 use BudgetGuru\GenerateOrder;
 use BudgetGuru\Order;
 use DateTimeImmutable;
@@ -23,8 +27,13 @@ class GenerateOrderHandler
         $order->clientName = $generateOrder->getClientName();
         $order->budget = $budget;
 
-        Log::success("Create Order in database");
-        Log::success("Send Email to client");
+        $orderRepository = new CreateOrderInToDatabase();
+        $logOrder = new LogGenerateOrder();
+        $sendMail = new SendOrderToEmail();
+
+        $orderRepository->action($order);
+        $logOrder->action($order);
+        $sendMail->action($order);
 
     }
 

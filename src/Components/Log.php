@@ -1,6 +1,6 @@
 <?php
 
-namespace BudgetGuru\Commands;
+namespace BudgetGuru\Components;
 
 define("KNRM", "\x1B[0m");
 define("KBLK", "\e[0;90m");
