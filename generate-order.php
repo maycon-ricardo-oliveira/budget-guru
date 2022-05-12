@@ -1,6 +1,7 @@
 <?php
 
-use BudgetGuru\Commands\GenerateOrderCommand;
+use BudgetGuru\GenerateOrder;
+use BudgetGuru\Commands\GenerateOrderHandler;
 
 require 'vendor/autoload.php';
 
@@ -10,6 +11,7 @@ $budgetItems = $argv[2];
 $clientName  = $argv[3];
 
 
-$generateOrder = new GenerateOrderCommand($budgetPrice, $budgetItems, $clientName);
+$generateOrder = new GenerateOrder($budgetPrice, $budgetItems, $clientName);
+$handler = new GenerateOrderHandler();
 
-$generateOrder->execute();
+$handler->execute($generateOrder);
