@@ -24,7 +24,7 @@ My objective with this project is complete most used **Design Patterns** princip
 |                    | ☐ Flyweight      | ☐ Iterator                 |
 |                    | ☐ Proxy          | ☐ Mediator                 |
 |                    |                  | ☐ Memento                  |
-|                    |                  | ☐ Observer                 |
+|                    |                  | ✅ Observer                 |
 |                    |                  | ☐ Interpreter              |
 
 [//]: # ( ✅ ☐ )
