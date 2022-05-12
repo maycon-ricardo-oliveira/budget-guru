@@ -4,15 +4,33 @@ namespace BudgetGuru\Taxes;
 
 use BudgetGuru\Budget;
 
-class Ikcv implements Tax
+class Ikcv extends TaxWithTwoAliquot
 {
 
-    public function calculateTax(Budget $budget): float
+    /**
+     * @param Budget $budget
+     * @return bool
+     */
+    protected function applyMaxTax(Budget $budget): bool
     {
-        if($budget->price > 300 && $budget->items > 3) {
-            return $budget->price * 0.04;
-        }
+        return $budget->price > 300 && $budget->items > 3;
+    }
 
-        return  $budget->price * 0.025;
+    /**
+     * @param Budget $budget
+     * @return float
+     */
+    protected function calculateMaxTax(Budget $budget): float
+    {
+        return $budget->price * 0.04;
+    }
+
+    /**
+     * @param Budget $budget
+     * @return float
+     */
+    protected function calculateMinTax(Budget $budget): float
+    {
+        return $budget->price * 0.025;
     }
 }

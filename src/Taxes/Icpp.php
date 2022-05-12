@@ -4,15 +4,22 @@ namespace BudgetGuru\Taxes;
 
 use BudgetGuru\Budget;
 
-class Icpp implements Tax
+class Icpp extends TaxWithTwoAliquot
 {
-    public function calculateTax(Budget $budget): float
-    {
-       if ($budget->price > 500) {
-           return $budget->price * 0.03;
-       }
 
-       return $budget->price * 0.02;
+    protected function applyMaxTax(Budget $budget): bool
+    {
+        return $budget->price > 500;
+    }
+
+    protected function calculateMaxTax(Budget $budget): float
+    {
+        return $budget->price * 0.03;
+    }
+
+    protected function calculateMinTax(Budget $budget): float
+    {
+        return $budget->price * 0.02;
     }
 
 }
