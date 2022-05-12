@@ -2,6 +2,9 @@
 
 namespace BudgetGuru;
 
+use BudgetGuru\BudgetStates\BudgetStatus;
+use BudgetGuru\BudgetStates\WaitingApprove;
+
 class Budget
 {
     public float $price;

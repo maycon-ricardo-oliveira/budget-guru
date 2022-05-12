@@ -1,6 +1,8 @@
 <?php
 
-namespace BudgetGuru;
+namespace BudgetGuru\BudgetStates;
+
+use BudgetGuru\Budget;
 
 class Approved extends BudgetStatus
 {

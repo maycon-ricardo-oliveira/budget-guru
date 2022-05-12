@@ -1,7 +1,8 @@
 <?php
 
-namespace BudgetGuru;
+namespace BudgetGuru\BudgetStates;
 
+use BudgetGuru\Budget;
 use DomainException;
 
 abstract class BudgetStatus
