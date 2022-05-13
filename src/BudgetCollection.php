@@ -3,6 +3,7 @@
 namespace BudgetGuru;
 
 
+use BudgetGuru\BudgetStates\Finished;
 use Exception;
 use Traversable;
 
@@ -26,5 +27,13 @@ class BudgetCollection implements \IteratorAggregate
     {
         return new \ArrayIterator($this->budgets);
 
+    }
+
+    public function finishedBudgets(): array
+    {
+        return array_filter(
+            $this->budgets,
+            fn (Budget $budget) => $budget->status instanceof Finished
+        );
     }
 }
