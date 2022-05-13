@@ -22,4 +22,9 @@ class WaitingApprove extends BudgetStatus
         $budget->status = new Reproved();
     }
 
+    public function finish(Budget $budget)
+    {
+        $budget->status = new Finished();
+    }
+
 }

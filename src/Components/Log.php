@@ -17,37 +17,42 @@ class Log
 
     public static function print($msg)
     {
-        echo KNRM . $msg . PHP_EOL;
+        echo KNRM . $msg . self::eol();
     }
 
     public static function error($msg)
     {
-        echo KRED . $msg . PHP_EOL;
+        echo KRED . $msg . self::eol();
     }
 
     public static function warning($msg)
     {
-        echo KYEL . $msg . PHP_EOL;
+        echo KYEL . $msg . self::eol();
     }
 
     public static function info($msg)
     {
-        echo KWHT . $msg . PHP_EOL;
+        echo KWHT . $msg . self::eol();
     }
 
     public static function highlight($msg)
     {
-        echo KCYN . $msg . PHP_EOL;
+        echo KCYN . $msg . self::eol();
     }
 
     public static function highlight2($msg)
     {
-        echo KMAG . $msg . PHP_EOL;
+        echo KMAG . $msg . self::eol();
     }
 
     public static function success($msg)
     {
-        echo KGRN. $msg . PHP_EOL;
+        echo KGRN . $msg . self::eol();
+    }
+
+    private static function eol()
+    {
+        return KNRM . PHP_EOL;
     }
 
 }
