@@ -3,7 +3,7 @@
 namespace BudgetGuru;
 
 use BudgetGuru\BudgetStates\Finished;
-use HttpAdapter;
+use BudgetGuru\Http\HttpAdapter;
 
 class BudgetRegister
 {
