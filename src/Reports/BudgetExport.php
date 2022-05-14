@@ -6,7 +6,6 @@ use BudgetGuru\Budget;
 
 class BudgetExport implements IContentExport
 {
-
     private Budget $budget;
 
     public function __construct(Budget $budget)
