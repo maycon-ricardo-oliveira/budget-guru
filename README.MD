@@ -19,7 +19,7 @@ My objective with this project is complete most used **Design Patterns** princip
 | ☐ Builder          | ✅ Adaptor Object | ✅ Template method          |
 | ☐ Abstract Factory | ✅ Bridge         | ✅ Chain Off Responsibility |
 | ☐ Prototype        | ☐ Composite      | ✅ Strategy                 |
-| ☐ Singleton        | ☐ Decorator      | ✅ Command                  |
+| ☐ Singleton        | ✅ Decorator      | ✅ Command                  |
 |                    | ☐ Facade         | ☐ Visitor                  |
 |                    | ☐ Flyweight      | ✅ Iterator                 |
 |                    | ☐ Proxy          | ☐ Mediator                 |
