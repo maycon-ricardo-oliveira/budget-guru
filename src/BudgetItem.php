@@ -2,8 +2,12 @@
 
 namespace BudgetGuru;
 
-class BudgetItem
+class BudgetItem implements Budgetable
 {
     public float $price;
 
+    public function price(): float
+    {
+        return  $this->price;
+    }
 }

@@ -5,22 +5,15 @@ namespace BudgetGuru;
 use BudgetGuru\BudgetStates\BudgetStatus;
 use BudgetGuru\BudgetStates\WaitingApprove;
 
-class Budget
+class Budget implements Budgetable
 {
-    private array $budgetItems;
-    public float $price;
-    public int $items;
+    private array $items;
     public BudgetStatus $status;
 
     public function __construct()
     {
         $this->status = new WaitingApprove();
-        $this->budgetItems = [];
-    }
-
-    public function applyExtraDiscount()
-    {
-        $this->price -= $this->status->calculateExtraDiscount($this);
+        $this->items = [];
     }
 
     public function approve()
@@ -38,8 +31,17 @@ class Budget
         $this->status->finish($this);
     }
 
-    public function addItem(BudgetItem $item)
+    public function addItem(Budgetable $item)
     {
-        $this->budgetItems[] = $item;
+        $this->items[] = $item;
+    }
+
+    public function price(): float
+    {
+        return array_reduce(
+            $this->items,
+            fn (float $acc, Budgetable $item) => $item->price() + $acc
+            ,0
+        );
     }
 }
