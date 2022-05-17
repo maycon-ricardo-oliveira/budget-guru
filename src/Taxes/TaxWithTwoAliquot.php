@@ -4,10 +4,10 @@ namespace BudgetGuru\Taxes;
 
 use BudgetGuru\Budget;
 
-abstract class TaxWithTwoAliquot implements Tax
+abstract class TaxWithTwoAliquot extends Tax
 {
 
-    public function calculateTax(Budget $budget): float
+    public function calculate(Budget $budget): float
     {
         if ($this->applyMaxTax($budget)) {
             return $this->calculateMaxTax($budget);

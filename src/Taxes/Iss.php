@@ -4,9 +4,9 @@ namespace BudgetGuru\Taxes;
 
 use BudgetGuru\Budget;
 
-class Iss implements Tax
+class Iss extends Tax
 {
-    public function calculateTax(Budget $budget): float
+    public function calculate(Budget $budget): float
     {
         return $budget->price * 0.06;
     }

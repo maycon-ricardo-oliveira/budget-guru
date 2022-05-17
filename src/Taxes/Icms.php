@@ -4,9 +4,9 @@ namespace BudgetGuru\Taxes;
 
 use BudgetGuru\Budget;
 
-class Icms implements Tax
+class Icms extends Tax
 {
-    public function calculateTax(Budget $budget): float
+    public function calculate(Budget $budget): float
     {
         return $budget->price * 0.1;
     }
