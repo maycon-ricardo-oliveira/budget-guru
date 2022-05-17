@@ -7,6 +7,7 @@ use BudgetGuru\BudgetStates\WaitingApprove;
 
 class Budget
 {
+    private array $budgetItems;
     public float $price;
     public int $items;
     public BudgetStatus $status;
@@ -14,6 +15,7 @@ class Budget
     public function __construct()
     {
         $this->status = new WaitingApprove();
+        $this->budgetItems = [];
     }
 
     public function applyExtraDiscount()
@@ -36,4 +38,8 @@ class Budget
         $this->status->finish($this);
     }
 
+    public function addItem(BudgetItem $item)
+    {
+        $this->budgetItems[] = $item;
+    }
 }
