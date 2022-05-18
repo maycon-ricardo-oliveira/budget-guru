@@ -13,8 +13,15 @@ class CalculateDiscounts
         $discountPipe = new DiscountMoreFiveItems(
             new DiscountMoreFiveHundred(
                 new DoesNotHaveDiscount()
-            ));
+            )
+        );
 
-        return $discountPipe->calculate($budget);
+        $calculatedDiscount = $discountPipe->calculate($budget);
+
+        $log = new DiscountLogger();
+        $log->inform($calculatedDiscount);
+
+        return $calculatedDiscount;
+
     }
 }
