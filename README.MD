@@ -20,7 +20,7 @@ My objective with this project is complete most used **Design Patterns** princip
 | ☐ Abstract Factory | ✅ Bridge         | ✅ Chain Off Responsibility |
 | ☐ Prototype        | ✅ Composite      | ✅ Strategy                 |
 | ☐ Singleton        | ✅ Decorator      | ✅ Command                  |
-|                    | ☐ Facade         | ☐ Visitor                  |
+|                    | ✅ Facade         | ☐ Visitor                  |
 |                    | ☐ Flyweight      | ✅ Iterator                 |
 |                    | ☐ Proxy          | ☐ Mediator                 |
 |                    |                  | ☐ Memento                  |
