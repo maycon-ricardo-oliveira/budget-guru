@@ -2,22 +2,22 @@
 
 use BudgetGuru\Budget;
 use BudgetGuru\Components\Log;
-use BudgetGuru\Order;
-use BudgetGuru\SharedOrderData;
+use BudgetGuru\Order\OrderFactory;
 
 require 'vendor/autoload.php';
 
 $orders = [];
 
-$sharedOrderData = new SharedOrderData(
-    md5((string) rand(1, 100000)),
-    new DateTimeImmutable()
-);
+$orderFactory = new OrderFactory();
 
 for ($i = 0; $i < 10000; $i++) {
-    $order = new Order();
-    $order->budget = new Budget();
-    $order->sharedOrderData = $sharedOrderData;
+    $budget = new Budget();
+    $order = $orderFactory->createOrder(
+        'Maycon Oliveira',
+        date('Y-m-d'),
+        $budget
+    );
+
     $orders[] = $order;
 }
 
@@ -25,3 +25,4 @@ $MBytes = memory_get_peak_usage() / 1024 / 1024;
 Log::error('Initial used memory: 7.27 MB');
 Log::warning('After change new date for today variable, used memory: 3.87 MB');
 Log::success('After change SharedOrderData, used memory: 3.11 MB');
+Log::success('After change OrderFactory, used memory: '. $MBytes);

@@ -1,10 +1,10 @@
 <?php
 
-namespace BudgetGuru;
+namespace BudgetGuru\Order;
 
 use DateTimeInterface;
 
-class SharedOrderData
+class TemplateOrder
 {
     private string $clientName;
     private \DateTimeInterface $finishDate;
