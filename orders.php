@@ -9,9 +9,10 @@ require 'vendor/autoload.php';
 
 $orders = [];
 
-$sharedOrderData = new SharedOrderData();
-$sharedOrderData->clientName = md5((string) rand(1, 100000));
-$sharedOrderData->finishDate = new DateTimeImmutable();
+$sharedOrderData = new SharedOrderData(
+    md5((string) rand(1, 100000)),
+    new DateTimeImmutable()
+);
 
 for ($i = 0; $i < 10000; $i++) {
     $order = new Order();
