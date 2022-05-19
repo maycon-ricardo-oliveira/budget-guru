@@ -4,8 +4,8 @@ namespace BudgetGuru;
 
 class Order
 {
-    public string $clientName;
-    public \DateTimeInterface $finishDate;
+
+    public SharedOrderData $sharedOrderData;
     public Budget $budget;
 
 }
