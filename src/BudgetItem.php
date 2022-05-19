@@ -8,6 +8,7 @@ class BudgetItem implements Budgetable
 
     public function price(): float
     {
+        sleep(1);
         return  $this->price;
     }
 }
