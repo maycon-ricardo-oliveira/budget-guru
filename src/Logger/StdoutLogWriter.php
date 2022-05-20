@@ -15,9 +15,45 @@ define("KWHT", "\e[0;97m");
 class StdoutLogWriter implements Logger
 {
 
-    public function write(string $message): void
+
+    /**
+     * @param string $message
+     * @param string $priority error|warning|success|info|highlight|highlight2
+     * @return void
+     */
+    public function write(string $message, string $priority = ''): void
     {
-        echo KNRM . $message;
+        echo self::$priority() . $message;
+    }
+
+    public static function error()
+    {
+        return KRED;
+    }
+
+    public static function warning()
+    {
+        return KYEL;
+    }
+
+    public static function info()
+    {
+        return KWHT;
+    }
+
+    public static function highlight()
+    {
+        return KCYN;
+    }
+
+    public static function highlight2()
+    {
+        return KMAG;
+    }
+
+    public static function success()
+    {
+        return KGRN;
     }
 
 }

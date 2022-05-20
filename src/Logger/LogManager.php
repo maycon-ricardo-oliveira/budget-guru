@@ -4,23 +4,26 @@ namespace BudgetGuru\Logger;
 
 abstract class LogManager
 {
-    public function __construct()
-    {
-    }
+    private const PRIORITY = ['error','warning','success','info','highlight','highlight2'];
 
     /**
      * @param string $message
-     * @param string $priority
+     * @param string $priority error|warning|success|info|highlight|highlight2
      * @return void
      */
     public function log(string $message, string $priority): void
     {
+
+        if (!in_array($priority, self::PRIORITY)) {
+            throw new \DomainException("Priority $priority is not acceptable");
+        }
+
         $logWriter = $this->createLogWriter();
 
         $today = date('d/m/Y');
 
         $formattedMessage = "[$today][$priority]: $message" . self::eol();
-        $logWriter->write($formattedMessage);
+        $logWriter->write($formattedMessage, $priority);
 
     }
 

@@ -12,7 +12,7 @@ class FileLogWriter implements Logger
         $this->file = fopen($filePath, 'a+');
     }
 
-    public function write(string $message): void
+    public function write(string $message, string $priority = ''): void
     {
         fwrite($this->file, $message);
     }
