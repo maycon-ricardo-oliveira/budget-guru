@@ -17,11 +17,7 @@ class StdoutLogWriter implements Logger
 
     public function write(string $message): void
     {
-        echo KNRM . $message . self::eol();
+        echo KNRM . $message;
     }
 
-    private static function eol()
-    {
-        return KNRM . PHP_EOL;
-    }
 }
