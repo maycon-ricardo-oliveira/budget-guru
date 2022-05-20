@@ -10,18 +10,12 @@ require 'vendor/autoload.php';
 $listBudgets = [];
 
 $budget1 = new Budget();
-$budget1->items = 7;
-$budget1->price = 1500.75;
 $budget1->approve();
 
 $budget2 = new Budget();
-$budget2->items = 3;
-$budget2->price = 150;
 $budget2->reprove();
 
 $budget3 = new Budget();
-$budget3->items = 5;
-$budget3->price = 1350;
 $budget3->finish();
 
 

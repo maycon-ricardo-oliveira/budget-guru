@@ -12,8 +12,6 @@ require 'vendor/autoload.php';
 
 
 $budget = new Budget();
-$budget->items = 7;
-$budget->price = 500;
 $budget->finish();
 
 
