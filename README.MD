@@ -16,7 +16,7 @@ My objective with this project is complete most used **Design Patterns** princip
 | **Creational**     | **Structural**   | **Behavioral**             |
 |--------------------|------------------|----------------------------|
 | ✅ Factory Method   | ✅ Adaptor Class  | ✅ State                    |
-| ☐ Builder          | ✅ Adaptor Object | ✅ Template method          |
+| ✅ Builder          | ✅ Adaptor Object | ✅ Template method          |
 | ✅ Abstract Factory | ✅ Bridge         | ✅ Chain Off Responsibility |
 | ☐ Prototype        | ✅ Composite      | ✅ Strategy                 |
 | ☐ Singleton        | ✅ Decorator      | ✅ Command                  |
