@@ -22,10 +22,8 @@ My objective with this project is complete most used **Design Patterns** princip
 |     | ✅ Singleton        | ✅ Decorator      | ✅ Command                  |
 |     |                    | ✅ Facade         | ✅ Iterator                 |
 |     |                    | ✅ Flyweight      | ✅ Observer                 |
-|     |                    | ✅ Proxy          | ☐ Mediator                 |
-|     |                    |                  | ☐ Memento                  |
-|     |                    |                  | ☐ Visitor                  |
-|     |                    |                  | ☐ Interpreter              |
+|     |                    | ✅ Proxy          |                            |
+
 
 [//]: # ( ✅ ☐ )
 ### Requirements:
