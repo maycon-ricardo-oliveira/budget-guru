@@ -21,4 +21,9 @@ class Invoice
         }, 0);
     }
 
+    public function __clone()
+    {
+        $this->emissionDate = new DateTimeImmutable();
+    }
+
 }

@@ -13,19 +13,19 @@ They are like pre-made blueprints that you can customize to solve a recurring de
 My objective with this project is complete most used **Design Patterns** principles.
 
 ### Principles:
-| **Creational**     | **Structural**   | **Behavioral**             |
-|--------------------|------------------|----------------------------|
-| ✅ Factory Method   | ✅ Adaptor Class  | ✅ State                    |
-| ✅ Builder          | ✅ Adaptor Object | ✅ Template method          |
-| ✅ Abstract Factory | ✅ Bridge         | ✅ Chain Off Responsibility |
-| ☐ Prototype        | ✅ Composite      | ✅ Strategy                 |
-| ☐ Singleton        | ✅ Decorator      | ✅ Command                  |
-|                    | ✅ Facade         | ☐ Visitor                  |
-|                    | ✅ Flyweight      | ✅ Iterator                 |
-|                    | ✅ Proxy          | ☐ Mediator                 |
-|                    |                  | ☐ Memento                  |
-|                    |                  | ✅ Observer                 |
-|                    |                  | ☐ Interpreter              |
+|     | **Creational**     | **Structural**   | **Behavioral**             |
+|:----|--------------------|------------------|----------------------------|
+|     | ✅ Factory Method   | ✅ Adaptor Class  | ✅ State                    |
+|     | ✅ Builder          | ✅ Adaptor Object | ✅ Template method          |
+|     | ✅ Abstract Factory | ✅ Bridge         | ✅ Chain Off Responsibility |
+|     | ✅ Prototype        | ✅ Composite      | ✅ Strategy                 |
+|     | ☐ Singleton        | ✅ Decorator      | ✅ Command                  |
+|     |                    | ✅ Facade         | ☐ Visitor                  |
+|     |                    | ✅ Flyweight      | ✅ Iterator                 |
+|     |                    | ✅ Proxy          | ☐ Mediator                 |
+|     |                    |                  | ☐ Memento                  |
+|     |                    |                  | ✅ Observer                 |
+|     |                    |                  | ☐ Interpreter              |
 
 [//]: # ( ✅ ☐ )
 ### Requirements:

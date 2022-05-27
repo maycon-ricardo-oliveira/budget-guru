@@ -23,3 +23,8 @@ $invoice = $invoiceBuilder->business('12345600014545', 'Maycon Ltda')
 
 
 Log::success('Printing invoice price: '. $invoice->price());
+
+
+$clone = clone $invoice;
+
+
