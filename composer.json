@@ -3,5 +3,8 @@
         "psr-4": {
             "BudgetGuru\\": "src/"
         }
-    }
+    },
+  "require": {
+    "ext-pdo": "*"
+  }
 }
