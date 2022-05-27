@@ -1,10 +1,13 @@
 <?php
 
-use BudgetGuru\BudgetItem;
+namespace BudgetGuru\Invoice;
 
-class InvoiceBuilder
+use BudgetGuru\BudgetItem;
+use DateTimeImmutable;
+
+abstract class InvoiceBuilder
 {
-    private Invoice $invoice;
+    protected Invoice $invoice;
 
     public function __construct()
     {
@@ -38,11 +41,7 @@ class InvoiceBuilder
         return $this;
     }
 
-    public function build(): Invoice
-    {
-        return $this->invoice;
-    }
-
+    abstract public function build(): Invoice;
     
 
 }
